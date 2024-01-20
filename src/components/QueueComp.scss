@@ -1,0 +1,62 @@
+@use "../vars.scss" as styles;
+
+$pointing-box-size: 12px;
+
+.queue-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.queue-items {
+  display: flex;
+  gap: 4px;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid styles.$blue;
+  border-radius: 8px;
+}
+
+.null {
+  background: gray;
+  border-color: gray;
+}
+
+.rail-info {
+  transition: 0.15s;
+  color: white;
+  width: fit-content;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-size: 15px;
+  position: relative;
+
+  .pointing-box {
+    z-index: -1;
+  }
+}
+
+.pointing-box {
+  height: $pointing-box-size;
+  width: $pointing-box-size;
+  position: absolute;
+  left: calc($pointing-box-size / 4 + 8px);
+  background: black;
+  transform: rotate(45deg);
+}
+
+.box-below {
+  bottom: calc(($pointing-box-size / 2) * -1 + 2px);
+}
+
+.box-above {
+  top: calc(($pointing-box-size / 2) * -1 + 2px);
+}

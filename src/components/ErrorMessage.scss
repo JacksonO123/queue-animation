@@ -1,0 +1,23 @@
+@use "../vars.scss" as styles;
+
+.error-message {
+  background: rgba(styles.$red, 0.75);
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.15s;
+  animation: slideIn 0.15s ease-in-out;
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 20px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
