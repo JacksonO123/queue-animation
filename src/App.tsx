@@ -93,19 +93,23 @@ function App() {
       <QueueComp queue={arr()} front={front()} back={back()} />
 
       <div class="controls">
-        <input
-          value={input()}
-          onChange={updateInput}
-          type="number"
-          placeholder="Enter a number to enqueue"
-          style={{
-            width: "180px",
-          }}
-        />
-        <button onClick={handlePush}>Enqueue</button>
-        <button onClick={handleDequeue} class="dequeue-button">
-          Dequeue
-        </button>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            value={input()}
+            onChange={updateInput}
+            type="number"
+            placeholder="Enter a number to enqueue"
+            style={{
+              width: "180px",
+            }}
+          />
+          <button onClick={handlePush} type="submit">
+            Enqueue
+          </button>
+          <button onClick={handleDequeue} class="dequeue-button" type="button">
+            Dequeue
+          </button>
+        </form>
       </div>
     </div>
   );

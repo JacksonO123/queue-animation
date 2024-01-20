@@ -37,7 +37,8 @@ button {
   }
 }
 
-.controls {
+.controls,
+.controls form {
   display: flex;
   gap: 8px;
   width: fit-content;
