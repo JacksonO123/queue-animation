@@ -1,28 +1,9 @@
-## Usage
+# Circular Queue Visualization
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+- Enter a number in the bottom input and hit enter or click enqueue to add it to the queue
+- Click dequeue to remove an item
+- Enter a number in the top input and click resize to resize the queue
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+# Development
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)
+Created using [SolidJS](https://www.solidjs.com/)

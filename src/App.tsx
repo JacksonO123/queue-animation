@@ -78,16 +78,42 @@ function App() {
     <div class="wrapper">
       <ErrorMessages messages={errorList} />
 
+      <div class="info-panel">
+        <h1>Circular Queue Visualization</h1>
+
+        <details>
+          <summary>Instructions</summary>
+
+          <ul>
+            <li>
+              Enter a number in the bottom input and hit enter or click enqueue
+              to add it to the queue
+            </li>
+            <li>Click dequeue to remove an item</li>
+            <li>
+              Enter a number in the top input and click resize to resize the
+              queue
+            </li>
+          </ul>
+        </details>
+
+        <span>By Jackson Otto</span>
+      </div>
+
       <div class="controls">
-        <input
-          placeholder="Queue length"
-          type="number"
-          onChange={updateQueueSize}
-          style={{
-            width: "110px",
-          }}
-        />
-        <button onClick={updateQueue}>Update Size</button>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            placeholder="Queue length"
+            type="number"
+            onChange={updateQueueSize}
+            style={{
+              width: "110px",
+            }}
+          />
+          <button onClick={updateQueue} type="submit">
+            Update Size
+          </button>
+        </form>
       </div>
 
       <QueueComp queue={arr()} front={front()} back={back()} />

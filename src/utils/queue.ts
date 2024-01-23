@@ -24,10 +24,11 @@ export default class Queue<T> {
       return;
     }
 
+    this.size++;
+
     if (this.head === -1) {
       this.head = this.tail = 0;
       this.arr[this.head] = value;
-      this.size++;
       return;
     }
 
@@ -35,8 +36,6 @@ export default class Queue<T> {
     else this.tail = 0;
 
     this.arr[this.tail] = value;
-
-    this.size++;
   }
 
   dequeue() {
@@ -45,16 +44,17 @@ export default class Queue<T> {
     if (this.isEmpty()) {
       errors.distributeError("Queue underflow");
       return null;
-    } else if (this.size === 1) {
+    }
+
+    this.size--;
+
+    if (this.size === 1) {
       this.head = this.tail = -1;
-      this.size--;
       return value;
     }
 
     if (this.head < this.capacity - 1) this.head++;
     else this.head = 0;
-
-    this.size--;
 
     return value;
   }

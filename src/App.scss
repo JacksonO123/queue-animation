@@ -53,3 +53,28 @@ button {
     background: darken($bg, 10%);
   }
 }
+
+.info-panel {
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: fit-content;
+  padding: 12px;
+
+  h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  details {
+    summary {
+      cursor: pointer;
+    }
+
+    ul {
+      margin-left: -0.5rem;
+    }
+  }
+}
