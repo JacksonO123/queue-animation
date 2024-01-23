@@ -86,13 +86,13 @@ function App() {
 
           <ul>
             <li>
-              Enter a number in the bottom input and hit enter or click enqueue
-              to add it to the queue
+              Enter a number in the bottom input and press enter or click
+              enqueue to add it to the queue
             </li>
             <li>Click dequeue to remove an item</li>
             <li>
-              Enter a number in the top input and click resize to resize the
-              queue
+              Enter a number in the top input and press enter or click update
+              size to resize the queue
             </li>
           </ul>
         </details>
