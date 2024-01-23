@@ -48,7 +48,7 @@ export default class Queue<T> {
 
     this.size--;
 
-    if (this.size === 1) {
+    if (this.size === 0) {
       this.head = this.tail = -1;
       return value;
     }
@@ -72,6 +72,7 @@ export default class Queue<T> {
   }
 
   isFull() {
+    console.log(this.size, this.capacity);
     return this.size === this.capacity;
   }
 }
