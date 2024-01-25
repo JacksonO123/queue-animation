@@ -12,7 +12,7 @@ type ChangeEvent = Event & {
 
 function App() {
   let size = 6;
-  let queue = new Queue(size, 0);
+  let queue = new Queue(size, "0");
   const [arr, setArr] = createSignal(queue.getArr());
   const [front, setFront] = createSignal(-1);
   const [back, setBack] = createSignal(-1);
@@ -32,7 +32,11 @@ function App() {
   });
 
   const updateInput = (e: ChangeEvent) => {
-    const value = e.currentTarget.value;
+    let value = e.currentTarget.value;
+
+    const maxLen = 2;
+    value = value.slice(0, maxLen);
+
     setInput(value);
   };
 
@@ -45,7 +49,7 @@ function App() {
   const handlePush = () => {
     if (input().length === 0) return;
 
-    const value = +input();
+    const value = input();
     setInput("");
 
     queue.enqueue(value);
@@ -70,7 +74,7 @@ function App() {
   };
 
   const updateQueue = () => {
-    queue = new Queue(size, 0);
+    queue = new Queue(size, "0");
     updateValues();
   };
 
