@@ -6,8 +6,10 @@ export default class Queue<T> {
   private tail: number;
   private size: number;
   private arr: T[];
+  private defaultValue: T;
 
   constructor(size: number, defaultValue: T) {
+    this.defaultValue = defaultValue;
     this.capacity = size;
     this.head = this.tail = -1;
     this.size = 0;
@@ -47,6 +49,7 @@ export default class Queue<T> {
     }
 
     this.size--;
+    this.arr[this.head] = this.defaultValue;
 
     if (this.size === 0) {
       this.head = this.tail = -1;

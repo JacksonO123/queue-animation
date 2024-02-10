@@ -37,6 +37,8 @@ function App() {
     const maxLen = 2;
     value = value.slice(0, maxLen);
 
+    console.log(value);
+
     setInput(value);
   };
 
@@ -109,7 +111,7 @@ function App() {
           <input
             placeholder="Queue length"
             type="number"
-            onChange={updateQueueSize}
+            onInput={updateQueueSize}
             style={{
               width: "110px",
             }}
@@ -126,8 +128,7 @@ function App() {
         <form onSubmit={(e) => e.preventDefault()}>
           <input
             value={input()}
-            onChange={updateInput}
-            type="number"
+            onInput={updateInput}
             placeholder="Enter a number to enqueue"
             style={{
               width: "180px",
